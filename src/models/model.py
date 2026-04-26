@@ -117,6 +117,26 @@ class Fraccion:
         resultado = Fraccion(numerador, denominador)
         resultado.simplificar()
         return resultado
+    def comparar(self, otra):
+        """
+        Compara esta fracción con otra.
+
+        Retorna:
+            1  -> si esta fracción es mayor
+            -1 -> si esta fracción es menor
+            0  -> si son iguales
+        """
+
+        # Multiplicación cruzada (evita decimales)
+        izq = self.numerador * otra.denominador
+        der = self.denominador * otra.numerador
+
+        if izq > der:
+            return 1
+        elif izq < der:
+            return -1
+        else:
+            return 0
         
 
 class DataModel:
@@ -158,3 +178,56 @@ class DataModel:
         Elimina todas las fracciones almacenadas en el modelo.
         """
         self.fracciones = []
+        
+    def mayor_fraccion(self):
+        """
+        Devuelve la fracción más grande de la lista.
+        """
+
+        if len(self.fracciones) == 0:
+            return None
+
+        mayor = self.fracciones[0]
+
+        for f in self.fracciones:
+            if f.comparar(mayor) == 1:
+                mayor = f
+
+        return mayor
+    
+    def menor_fraccion(self):
+        """
+        Devuelve la fracción más pequeña de la lista.
+        """
+
+        if len(self.fracciones) == 0:
+            return None
+
+        menor = self.fracciones[0]
+
+        for f in self.fracciones:
+            if f.comparar(menor) == -1:
+                menor = f
+
+        return menor
+    
+    def ordenar(self):
+        """
+        Ordena las fracciones de menor a mayor usando comparación simple.
+        """
+
+        n = len(self.fracciones)
+
+        for i in range(n):
+            j = 0
+
+            while j < n - 1:
+
+                # Si la actual es mayor que la siguiente, se intercambian
+                if self.fracciones[j].comparar(self.fracciones[j + 1]) != 1:
+
+                    temp = self.fracciones[j]
+                    self.fracciones[j] = self.fracciones[j + 1]
+                    self.fracciones[j + 1] = temp
+
+                j += 1

@@ -32,7 +32,10 @@ class Controller:
         self.view.comando_resta = self.restar_todo
         self.view.comando_multiplicacion = self.multiplicar_todo
         self.view.comando_division = self.dividir_todo
+        self.view.comando_mayor = self.mayor_fraccion
+        self.view.comando_menor = self.menor_fraccion
         self.view.comando_limpiar = self.limpiar_lista
+        self.view.comando_ordenar = self.ordenar_fracciones
 
     def handle_button_click(self):
         """
@@ -133,7 +136,49 @@ class Controller:
 
         self.view.update_display(str(resultado))
     
+    def mayor_fraccion(self):
+        """
+        Muestra la fracción más grande de todas las almacenadas.
+        """
+
+        resultado = self.model.mayor_fraccion()
+
+        # Si no hay datos
+        if resultado is None:
+            self.view.update_display("No hay fracciones")
+            return
+
+        # Mostrar resultado
+        self.view.update_display("Mayor: " + str(resultado))
+    
+    def menor_fraccion(self):
+        """
+        Muestra la fracción más pequeña de todas las almacenadas.
+        """
+
+        resultado = self.model.menor_fraccion()
+
+        # Si no hay datos
+        if resultado is None:
+            self.view.update_display("No hay fracciones")
+            return
+
+        # Mostrar resultado
+        self.view.update_display("Menor: " + str(resultado))
+    
     def limpiar_lista(self):
-        self.model.fracciones = []
+        self.model.clear()
         self.view.update_display("Lista limpiada")
         self.view.mostrar_lista([])
+    
+    def ordenar_fracciones(self):
+        lista = self.model.get_all()
+
+        if len(lista) == 0:
+            self.view.update_display("No hay fracciones")
+            return
+
+        self.model.ordenar()
+
+        self.view.mostrar_lista(self.model.get_all())
+        self.view.update_display("Fracciones ordenadas")

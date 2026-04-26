@@ -38,7 +38,10 @@ class View:
         self.comando_resta = None
         self.comando_multiplicacion = None
         self.comando_division = None
+        self.comando_mayor = None
+        self.comando_menor = None
         self.comando_limpiar = None
+        self.comando_ordenar = None
 
         # ===== ENTRADAS / LABELS =====
         Label(self.frame, text="Numerador").pack()
@@ -69,6 +72,15 @@ class View:
         
         Button(self.frame, text="Limpiar",
                command=self.on_limpiar_click).pack()
+        
+        Button(self.frame, text="Mayor",
+               command=self.on_mayor_click).pack()
+
+        Button(self.frame, text="Menor",
+               command=self.on_menor_click).pack()
+        
+        Button(self.frame, text="Ordenar",
+               command=self.on_ordenar_click).pack()
 
         # ===== RESULTADO (BASE) =====
         self.label = Label(self.frame, text="Resultado:")
@@ -106,9 +118,30 @@ class View:
         if self.comando_division:
             self.comando_division()
     
+    def on_mayor_click(self):
+        """
+        Ejecuta la acción para obtener la fracción mayor.
+        """
+        if self.comando_mayor:
+            self.comando_mayor()
+    
+    def on_menor_click(self):
+        """
+        Ejecuta la acción para obtener la fracción menor.
+        """
+        if self.comando_menor:
+            self.comando_menor()
+    
     def on_limpiar_click(self):
         if self.comando_limpiar:
             self.comando_limpiar()
+        
+    def on_ordenar_click(self):
+        """
+        Ejecuta la ordenación de fracciones.
+        """
+        if self.comando_ordenar:
+            self.comando_ordenar()
 
     # ===== MÉTODOS GET =====
 
