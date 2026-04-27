@@ -1,0 +1,5 @@
+# Este proyecto no requiere librerías externas.
+# Usa únicamente módulos incluidos en Python 3.x:
+# - tkinter (interfaz gráfica)
+# - unittest (pruebas)
+# - json (lectura de datos)

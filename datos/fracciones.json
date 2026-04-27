@@ -1,0 +1,50 @@
+{
+    "operaciones_dos_fracciones": {
+        "descripcion": "Casos para sumar, restar, multiplicar y dividir entre dos fracciones",
+        "casos": [
+            {
+                "f1": [1, 2],
+                "f2": [1, 2],
+                "suma": "1/1",
+                "resta": "0/1",
+                "multiplicacion": "1/4",
+                "division": "1/1"
+            },
+            {
+                "f1": [3, 4],
+                "f2": [1, 4],
+                "suma": "1/1",
+                "resta": "1/2",
+                "multiplicacion": "3/16",
+                "division": "3/1"
+            },
+            {
+                "f1": [2, 3],
+                "f2": [3, 4],
+                "suma": "17/12",
+                "resta": "-1/12",
+                "multiplicacion": "1/2",
+                "division": "8/9"
+            }
+        ]
+    },
+    "lista_de_fracciones": {
+        "descripcion": "Lista para probar mayor, menor y ordenar",
+        "fracciones": [
+            [1, 4],
+            [3, 4],
+            [1, 2],
+            [2, 3]
+        ],
+        "mayor_esperado": "3/4",
+        "menor_esperado": "1/4",
+        "ordenado_esperado": ["3/4", "2/3", "1/2", "1/4"]
+    },
+    "errores": {
+        "descripcion": "Casos que deben lanzar error",
+        "casos": [
+            {"motivo": "denominador cero",    "fraccion": [1, 0]},
+            {"motivo": "division entre cero", "f1": [1, 2], "f2": [0, 4]}
+        ]
+    }
+}
