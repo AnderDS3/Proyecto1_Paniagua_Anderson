@@ -19,21 +19,23 @@ Permite al usuario ingresar fracciones y realizar las siguientes operaciones:
 ## Estructura del proyecto
 
 ```
-proyecto1_Paniagua_Anderson/
-├── README.md
-├── requirements.txt
+Proyecto1_Paniagua_Anderson/
+├── README.md          ← instrucciones de ejecución
+├── requirements.txt   ← librerías necesarias (ninguna en este caso)
 ├── datos/
-│   └── fracciones.json
-├── src/
-│   ├── main.py
+│   └── fracciones.json  ← datos de prueba
+├── src/               ← código fuente principal
+│   ├── main.py        ← punto de entrada, arranca la app
 │   ├── models/
-│   │   └── model.py
+│   │   └── model.py   ← lógica de las fracciones
 │   ├── views/
-│   │   └── view.py
+│   │   └── view.py    ← interfaz gráfica
 │   └── controllers/
-│       └── controller.py
-└── tests/
-    └── test_fracciones.py
+│       └── controller.py ← conecta modelo y vista
+├── tests/
+│   └── test_fracciones.py ← pruebas automáticas
+└── venv/              ← entorno virtual (no se entrega)
+
 ```
 
 ---

@@ -5,6 +5,7 @@ Se importan componentes de Tkinter para construir la interfaz gráfica.
 - Button: crea botones interactivos.
 - Frame: contenedor para organizar elementos.
 - Entry: permite ingresar datos por teclado.
+- Canvas: lienzo para dibujar formas y texto personalizado
 """
 from tkinter import Tk, Label, Button, Frame, Entry
 
