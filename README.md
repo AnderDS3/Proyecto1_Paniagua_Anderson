@@ -48,7 +48,7 @@ No requiere librerías externas. Solo necesitas tener **Python 3** instalado.
 
 ## ¿Cómo ejecutar?
 
-Desde la carpeta raíz del proyecto, corre:
+Desde la terminal del proyecto, corre:
 
 ```bash ejecutar:
 python src/main.py
@@ -58,7 +58,7 @@ python src/main.py
 
 ## ¿Cómo correr los tests?
 
-Desde la carpeta raíz del proyecto, corre:
+Desde la terminal del proyecto, corre:
 
 ```bash ejecutar:
 python -m unittest discover tests
@@ -68,4 +68,4 @@ python -m unittest discover tests
 
 ## Autor
 
-Dany Paniagua
+Anderson Paniagua Dany
